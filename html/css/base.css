@@ -1,0 +1,263 @@
+/* 
+    Document   : base
+    Created on : Jun 9, 2011, 2:07:12 PM
+    Author     : mkram0
+    Description:
+        Basic CSS Styles applying to all pages
+*/
+
+/*
+ ----> CSS Reset file. Copied from meyerweb.com
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, root {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+        font-family: "Helvetica Neue", Helvetica, sans-serif !important;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.clear
+{
+    clear:both;
+}
+.clear_left
+{
+    clear:left;
+}
+.clear_right
+{
+    clear:right;
+}
+.float_left
+{
+    float:left;
+}
+.float_right
+{
+    float:right;
+}
+
+body, html
+{
+    height:100%;
+    width:100%;
+}
+
+body
+{
+    min-width:939px;
+    max-height:1000px;
+    height:100%;
+    background: rgb(14,15,17);
+}
+
+/*
+ ----> End of CSS Reset
+*/
+
+/*
+   Custom CSS Styles for Reset
+*/
+p
+{
+    font-size:18px;
+}
+
+h1
+{
+    font-size:50px;
+}
+
+h2
+{
+    font-size:35px;
+}
+
+h3
+{
+    font-size:22px;
+}
+
+h4
+{
+    font-size:20px;
+}
+
+h5
+{
+    font-size:18px;
+}
+
+h6
+{
+    font-size:13px;
+}
+
+/*
+   Color presets used in the design
+*/
+.white
+{
+    color: rgb(255,255,255);
+}
+
+.gray
+{
+    color: rgb(156,156,156);
+}
+
+.darkgray
+{
+    color: rgb(34,34,34);
+}
+
+.black
+{
+    color: rgb(0,0,0);
+}
+
+/*
+   Background
+*/
+
+#container
+{
+    background: url("../images/background.png") no-repeat;
+    background-position: center top;
+    position:relative;
+    height:100%;
+    width:100%;
+}
+#content
+{
+    width:939px;
+    margin:0 auto;
+    position:relative;
+}
+
+/*
+   Navigation and the top bit
+*/
+#header
+{
+    height:280px;
+    position:relative;
+}
+
+/*
+   Logo
+*/
+#logo
+{
+    position:relative;
+    top:30px;
+    width:440px;
+    height:107px;
+    background-image: url("../images/logo.png");
+}
+
+/*
+   Slogan
+*/
+#slogan h3
+{
+    position:absolute;
+    top:58px;
+    right:0px;
+}
+#slogan h6
+{
+    position:absolute;
+    top:46px;
+    right:0px;
+}
+
+/*
+   Navigation
+*/
+#navigation
+{
+    list-style:none;
+    width:inherit;
+    height:79px;
+    float:left;
+    position:absolute;
+    top: 193px;
+}
+#navigation li
+{
+    margin-left:1px;
+    float:left;
+    height:inherit;
+    background-image: url("../images/navigation.png");
+}
+#navigation li a
+{
+    display:block;
+    width:inherit;
+    height:inherit;
+    text-indent: -999999px;
+}
+#navigation li a, #navigation li a:hover, #navigation li a:visited, #navigation li a :active
+{
+    cursor: pointer;
+}
+
+#navigation li#about_me
+{
+    margin-left:0px;
+    width:254px;
+    background-position: 0px 79px;
+}
+#navigation li#log_in
+{
+    width:240px;
+    background-position: -255px 0px;
+}
+#navigation li#portfolio
+{
+    width:224px;
+    background-position: -496px 0px;
+}
+#navigation li#contact
+{
+    width:218px;
+    background-position: -721px 0px;
+}
