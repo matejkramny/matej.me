@@ -231,6 +231,7 @@ h6
 #navigation li a
 {
     display:block;
+    position:absolute;
     width:inherit;
     height:inherit;
     text-indent: -999999px;
@@ -240,12 +241,34 @@ h6
     cursor: pointer;
 }
 
-#navigation li#about_me
+#navigation li#nav_about_me
 {
     margin-left:0px;
     width:254px;
-    background-position: 0px 79px;
+    position:relative;
+    height:inherit;
+    background:none;
 }
+#navigation li#nav_about_me div#about_me, #navigation li#nav_about_me div#about_me_active
+{
+    width:inherit;
+    background-image: url("../images/navigation.png");
+    background-position:0px 0px;
+    position:absolute;
+    z-index:4;
+    height:inherit;
+}
+#navigation li#nav_about_me div#about_me_active
+{
+    background-position: 0px 79px;
+    visibility:hidden;
+    z-index:5;
+}
+#navigation li#nav_about_me a
+{
+    z-index:6;
+}
+
 #navigation li#log_in
 {
     width:240px;
@@ -261,3 +284,18 @@ h6
     width:218px;
     background-position: -721px 0px;
 }
+
+/*
+   Canvas
+*/
+#canvas
+{
+   width:939px;
+   height:483px;
+   margin-top:10px;
+   background-image: url("../images/container_bg.png");
+}
+
+/*
+   Forms
+*/
