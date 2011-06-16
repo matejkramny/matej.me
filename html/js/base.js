@@ -38,5 +38,9 @@ $.fn.nav_flyup = function (){
                 'bottom':'0px'
             }, 'slow');
         } );
+    }).click(function(){
+        // click event handler
+        window.location = nav + ".html";
+        return false;
     });
 };
