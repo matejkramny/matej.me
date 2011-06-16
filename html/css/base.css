@@ -239,7 +239,10 @@ h6
 #navigation li a, #navigation li a:hover, #navigation li a:visited, #navigation li a :active
 {
     cursor: pointer;
+    z-index:6;
 }
+
+/* Navigation about_me link */
 
 #navigation li#nav_about_me
 {
@@ -264,25 +267,83 @@ h6
     visibility:hidden;
     z-index:5;
 }
-#navigation li#nav_about_me a
+
+/* Navigation log_in link */
+
+#navigation li#nav_log_in
 {
-    z-index:6;
+    margin-left:0px;
+    width:240px;
+    position:relative;
+    height:inherit;
+    background:none;
+}
+#navigation li#nav_log_in div#log_in, #navigation li#nav_log_in div#log_in_active
+{
+    width:inherit;
+    background-image: url("../images/navigation.png");
+    background-position: -255px 0px;
+    position:absolute;
+    z-index:4;
+    height:inherit;
+}
+#navigation li#nav_log_in div#log_in_active
+{
+    background-position: -255px 79px;
+    visibility:hidden;
+    z-index:5;
 }
 
-#navigation li#log_in
+/* Navigation portfolio link */
+
+#navigation li#nav_portfolio
 {
-    width:240px;
-    background-position: -255px 0px;
-}
-#navigation li#portfolio
-{
+    margin-left:0px;
     width:224px;
-    background-position: -496px 0px;
+    position:relative;
+    height:inherit;
+    background:none;
 }
-#navigation li#contact
+#navigation li#nav_portfolio div#portfolio, #navigation li#nav_portfolio div#portfolio_active
 {
+    width:inherit;
+    background-image: url("../images/navigation.png");
+    background-position: -496px 0px;
+    position:absolute;
+    z-index:4;
+    height:inherit;
+}
+#navigation li#nav_portfolio div#portfolio_active
+{
+    background-position: -496px 79px;
+    visibility:hidden;
+    z-index:5;
+}
+
+/* Navigation contact link */
+
+#navigation li#nav_contact
+{
+    margin-left:0px;
     width:218px;
+    position:relative;
+    height:inherit;
+    background:none;
+}
+#navigation li#nav_contact div#contact, #navigation li#nav_contact div#contact_active
+{
+    width:inherit;
+    background-image: url("../images/navigation.png");
     background-position: -721px 0px;
+    position:absolute;
+    z-index:4;
+    height:inherit;
+}
+#navigation li#nav_contact div#contact_active
+{
+    background-position: -721px 79px;
+    visibility:hidden;
+    z-index:5;
 }
 
 /*
