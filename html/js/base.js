@@ -73,15 +73,19 @@ $.fn.inputs = function ()
             $(this).parent().toggleClass ("focused");
         }).keyup (function(){
             var child = $(this).parent().children("span");
+            var isPasswordField = $(this).is("[type=password]");
             
             if($(this).val().length > 0)
             {
                 var opacity = 0.5;
                 
                 var defaultTextWidth = $().getTextWidth(child.html());
-                var textWidth = $().getTextWidth($(this).val());
+                var textWidth = $().getTextWidth($(this).val(), isPasswordField);
                 
-                var textMaxWidth = 243 - defaultTextWidth;
+                var textMaxWidth;
+                if(isPasswordField)
+                    textMaxWidth = 273 - defaultTextWidth;
+                else textMaxWidth = 253 - defaultTextWidth;
                 
                 if(textWidth >= textMaxWidth)
                 {
@@ -96,7 +100,7 @@ $.fn.inputs = function ()
                     });
                 }
             }
-            else if(child.width() == '293')
+            else if(child.width() >= '293')
             {
                 child.stop(true).animate({ fontSize: "5px", opacity:0 }, 'fast', function(){
                     $(this).css ('width', 'auto').animate({ fontSize:"18px", opacity: 1 }, 'fast');
@@ -109,9 +113,23 @@ $.fn.inputs = function ()
 
 $.fn.getTextWidth = function()
 {
-    $('body').after ("<div id=\"textWidth\">" + arguments[0] + "</div>");
-    var textWidth = $("#textWidth").css ({ display: "none", width: "auto" }).width();
-    $("#textWidth").remove();
+    var password = arguments[1] || false;
+    var text = arguments[0] || "";
+    var length = text.length;
+    var textWidth;
+    
+    if(password)
+    {
+        var bulletWidth = 9;
+        textWidth = bulletWidth * length;
+    }
+    else
+    {
+        text = text.replace (new RegExp(" ", "g"), ".");
+        $('body').after ("<div id=\"textWidth\">" + text + "</div>");
+        textWidth = $("#textWidth").css ({ display: "none", width: "auto" }).width();
+        $("#textWidth").remove();
+    }
     
     return textWidth;
 }
