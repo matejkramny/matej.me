@@ -64,11 +64,52 @@ $.fn.nav_flyup = function (){
 
 $.fn.inputs = function ()
 {
+    var animatingTo = false;
+    
     $("input[type=text]").each(function(){
         $(this).focus(function(){
             $(this).parent().toggleClass ("focused");
         }).blur (function(){
             $(this).parent().toggleClass ("focused");
+        }).keyup (function(){
+            var child = $(this).parent().children("span");
+            
+            if($(this).val().length > 0)
+            {
+                var opacity = 0.5;
+                
+                var defaultTextWidth;
+                var textWidth;
+                
+                $('body').after ("<div id=\"defaultTextWidth\">" + child.html() + "</div>");
+                defaultTextWidth = $("#defaultTextWidth").css ({ display: "none", width: "auto" }).width();
+                $("#defaultTextWidth").remove();
+                
+                $('body').after ("<div id=\"textWidth\">" + $(this).val() + "</div>");
+                textWidth = $("#textWidth").css ({ display: "none", width: 'auto' }).width();
+                $("#textWidth").remove();
+                
+                var textMaxWidth = 243 - defaultTextWidth;
+                
+                if(textWidth >= textMaxWidth)
+                {
+                    opacity = 0;
+                }
+                if(animatingTo == false)
+                {
+                    animatingTo = true;
+                    child.stop(true).animate({ opacity:opacity, width:'293px' }, 'fast', function(){
+                        animatingTo = false;
+                    });
+                }
+            }
+            else if(child.width() == '293')
+            {
+                child.stop(true).animate({ opacity:0 }, 'slow', function(){
+                    $(this).css ('width', 'auto').animate({ opacity: 1 }, 'slow');
+                    animatingFrom = false;
+                });
+            }
         });
     });
 }

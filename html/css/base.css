@@ -386,8 +386,7 @@ label
 }
 .checkbox input[type=checkbox]
 {
-    position:absolute;
-    left: -999999px;
+    display: none;
 }
 .checked
 {
@@ -429,6 +428,21 @@ label
     background-image: url("../images/input_bg.png");
     background-repeat: no-repeat;
     background-position: 0px 0px;
+    position: relative;
+    font-family: "HelveticaNeue-Light";
+}
+.input_text span
+{
+    position:absolute;
+    z-index: 7;
+    font-size: 18px;
+    line-height: 17px;
+    padding:0.5em;
+    padding-left:0.6em;
+    text-align: right;
+    height:18px;
+    /* width:293px; */
+    text-shadow: 0 0px 0 gray;
 }
 .input_text input[type=text], .input_text input[type=password]
 {
@@ -438,7 +452,11 @@ label
     background: transparent;
     padding:0.5em;
     font-size: 18px;
-    font-family: "HelveticaNeue-Light";
+    font-family: inherit;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 8;
 }
 .focused
 {
