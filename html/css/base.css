@@ -29,6 +29,7 @@ time, mark, audio, video, root {
         font-family: "Helvetica Neue", Helvetica, sans-serif !important;
 	font: inherit;
 	vertical-align: baseline;
+        text-shadow: 0 1px 0 black;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -351,12 +352,95 @@ h6
 */
 #canvas
 {
-   width:939px;
-   height:483px;
+   width:919px;
+   height:463px;
    margin-top:10px;
    background-image: url("../images/container_bg.png");
+   padding:10px;
 }
 
 /*
    Forms
 */
+
+/* Checkbox */
+label
+{
+    display:block;
+    margin-bottom: 3px;
+    padding-left: 0.5em;
+    width:261px;
+    height: 18px;
+    line-height:20px;
+    clear:both;
+}
+.checkbox
+{
+    background-position: 8px center;
+    background-repeat: no-repeat;
+    border: 1px solid #252525;
+    color: white;
+    cursor: pointer;
+    padding: 0.5em;
+    padding-left: 38px;
+}
+.checkbox input[type=checkbox]
+{
+    position:absolute;
+    left: -999999px;
+}
+.checked
+{
+    background-color: rgb(34,34,34);
+    background-image: url("../images/box_checkbox_on.png");
+}
+.unchecked
+{
+    background-color: rgb(28,28,28);
+    background-image: url("../images/box_checkbox_off.png");
+}
+/* Buttons */
+.button
+{
+    display:block;
+    height:36px;
+    width:137px;
+    background-image: url("../images/button.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    padding: 0;
+    font-size: 22px;
+    font-family: "HelveticaNeue-Light";
+    cursor:pointer;
+    clear:both;
+    margin-left: 172px;
+}
+/* Text inputs */
+.input_text
+{
+    display:block;
+    width:311px;
+    height:36px;
+    padding:0;
+    margin:0;
+    margin-left: -1px;
+    margin-bottom: 3px;
+    background-image: url("../images/input_bg.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+}
+.input_text input[type=text], .input_text input[type=password]
+{
+    border: none;
+    width:293px;
+    height:18px;
+    background: transparent;
+    padding:0.5em;
+    font-size: 18px;
+    font-family: "HelveticaNeue-Light";
+}
+.focused
+{
+    background-position: 0px -36px;
+}
