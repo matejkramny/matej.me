@@ -78,12 +78,8 @@ $.fn.inputs = function ()
             {
                 var opacity = 0.5;
                 
-                var defaultTextWidth;
+                var defaultTextWidth = $().getTextWidth(child.html());
                 var textWidth;
-                
-                $('body').after ("<div id=\"defaultTextWidth\">" + child.html() + "</div>");
-                defaultTextWidth = $("#defaultTextWidth").css ({ display: "none", width: "auto" }).width();
-                $("#defaultTextWidth").remove();
                 
                 $('body').after ("<div id=\"textWidth\">" + $(this).val() + "</div>");
                 textWidth = $("#textWidth").css ({ display: "none", width: 'auto' }).width();
@@ -95,23 +91,33 @@ $.fn.inputs = function ()
                 {
                     opacity = 0;
                 }
+                
                 if(animatingTo == false)
                 {
                     animatingTo = true;
-                    child.stop(true).animate({ opacity:opacity, width:'293px' }, 'fast', function(){
+                    child.stop(true).animate({ opacity:opacity, fontSize: "18px", width:'293px' }, 'fast', function(){
                         animatingTo = false;
                     });
                 }
             }
             else if(child.width() == '293')
             {
-                child.stop(true).animate({ opacity:0 }, 'slow', function(){
-                    $(this).css ('width', 'auto').animate({ opacity: 1 }, 'slow');
+                child.stop(true).animate({ fontSize: "5px", opacity:0 }, 'fast', function(){
+                    $(this).css ('width', 'auto').animate({ fontSize:"18px", opacity: 1 }, 'fast');
                     animatingFrom = false;
                 });
             }
         });
     });
+}
+
+$.fn.getTextWidth = function()
+{
+    $('body').after ("<div id=\"textWidth\">" + arguments[0] + "</div>");
+    var textWidth = $("#textWidth").css ({ display: "none", width: "auto" }).width();
+    $("#textWidth").remove();
+    
+    return textWidth;
 }
 
 $.fn.checkbox = function ()
