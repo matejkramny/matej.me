@@ -66,7 +66,7 @@ $.fn.inputs = function ()
 {
     var animatingTo = false;
     
-    $("input[type=text]").each(function(){
+    $("input[type=text], input[type=password]").each(function(){
         $(this).focus(function(){
             $(this).parent().toggleClass ("focused");
         }).blur (function(){
@@ -79,11 +79,7 @@ $.fn.inputs = function ()
                 var opacity = 0.5;
                 
                 var defaultTextWidth = $().getTextWidth(child.html());
-                var textWidth;
-                
-                $('body').after ("<div id=\"textWidth\">" + $(this).val() + "</div>");
-                textWidth = $("#textWidth").css ({ display: "none", width: 'auto' }).width();
-                $("#textWidth").remove();
+                var textWidth = $().getTextWidth($(this).val());
                 
                 var textMaxWidth = 243 - defaultTextWidth;
                 
