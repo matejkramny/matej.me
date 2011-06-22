@@ -30,6 +30,7 @@ time, mark, audio, video, root {
 	font: inherit;
 	vertical-align: baseline;
         text-shadow: 0 1px 0 black;
+        color: rgb(34,34,34);
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -87,6 +88,30 @@ body
     max-height:1000px;
     height:100%;
     background: rgb(14,15,17);
+}
+
+a
+{
+    text-decoration: none;
+    text-shadow: 0 1px 0 white;
+}
+a:hover
+{
+    text-decoration: none;
+    text-shadow: 0 0 0 #333;
+}
+a:visited
+{
+    text-shadow: 0 0 0 red;
+}
+a:active
+{
+    text-shadow: 0 0 0 red;
+}
+
+p
+{
+    text-shadow: none;
 }
 
 /*
@@ -443,6 +468,7 @@ label
     height:18px;
     /* width:293px; */
     text-shadow: 0 0px 0 gray;
+    overflow:hidden;
 }
 .input_text input[type=text], .input_text input[type=password]
 {
@@ -462,3 +488,5 @@ label
 {
     background-position: 0px -36px;
 }
+
+/* textarea */

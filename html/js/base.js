@@ -65,45 +65,54 @@ $.fn.nav_flyup = function (){
 $.fn.inputs = function ()
 {
     var animatingTo = false;
-    
+
     $("input[type=text], input[type=password]").each(function(){
+        var child = $(this).parent().children("span");
+        var isPasswordField = $(this).is("[type=password]");
+        var timeout;
+
         $(this).focus(function(){
             $(this).parent().toggleClass ("focused");
         }).blur (function(){
             $(this).parent().toggleClass ("focused");
-        }).keyup (function(){
-            var child = $(this).parent().children("span");
-            var isPasswordField = $(this).is("[type=password]");
+        }).keypress(function(){
+            var opacity = 0.5;
+
+            var defaultTextWidth = $().getTextWidth(child.html());
+            var textWidth = $().getTextWidth($(this).val(), isPasswordField);
+
+            var textMaxWidth;
+            if(isPasswordField)
+                textMaxWidth = 273 - defaultTextWidth;
+            else textMaxWidth = 253 - defaultTextWidth;
+
+            if(textWidth >= textMaxWidth)
+            {
+                opacity = 0;
+            }
             
+            child.animate({
+                opacity:opacity,
+                fontSize: "18px",
+                width:'293px'
+            }, 'fast', function(){
+                $(this).stop(true);
+            });
+        }).keyup (function(){
             if($(this).val().length > 0)
             {
-                var opacity = 0.5;
                 
-                var defaultTextWidth = $().getTextWidth(child.html());
-                var textWidth = $().getTextWidth($(this).val(), isPasswordField);
-                
-                var textMaxWidth;
-                if(isPasswordField)
-                    textMaxWidth = 273 - defaultTextWidth;
-                else textMaxWidth = 253 - defaultTextWidth;
-                
-                if(textWidth >= textMaxWidth)
-                {
-                    opacity = 0;
-                }
-                
-                if(animatingTo == false)
-                {
-                    animatingTo = true;
-                    child.stop(true).animate({ opacity:opacity, fontSize: "18px", width:'293px' }, 'fast', function(){
-                        animatingTo = false;
-                    });
-                }
             }
             else if(child.width() >= '293')
             {
-                child.stop(true).animate({ fontSize: "5px", opacity:0 }, 'fast', function(){
-                    $(this).css ('width', 'auto').animate({ fontSize:"18px", opacity: 1 }, 'fast');
+                child.stop(true).animate({
+                    fontSize: "5px",
+                    opacity:0
+                }, 'fast', function(){
+                    $(this).css ('width', 'auto').animate({
+                        fontSize:"18px",
+                        opacity: 1
+                    }, 'fast');
                     animatingFrom = false;
                 });
             }
@@ -117,7 +126,7 @@ $.fn.getTextWidth = function()
     var text = arguments[0] || "";
     var length = text.length;
     var textWidth;
-    
+
     if(password)
     {
         var bulletWidth = 9;
@@ -127,10 +136,13 @@ $.fn.getTextWidth = function()
     {
         text = text.replace (new RegExp(" ", "g"), ".");
         $('body').after ("<div id=\"textWidth\">" + text + "</div>");
-        textWidth = $("#textWidth").css ({ display: "none", width: "auto" }).width();
+        textWidth = $("#textWidth").css ({
+            display: "none",
+            width: "auto"
+        }).width();
         $("#textWidth").remove();
     }
-    
+
     return textWidth;
 }
 
@@ -142,7 +154,7 @@ $.fn.checkbox = function ()
         else
             $(this).parent().addClass ("unchecked");
     })
-    
+
     $(":checkbox").click (function() {
         if($(this).is(':checked'))
             $(this).parent().removeClass ("unchecked").addClass ("checked");
