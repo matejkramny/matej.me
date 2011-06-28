@@ -4,9 +4,18 @@
         <title>About matej</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/base.css" media="all" type="text/css">
+        <link rel="stylesheet" href="css/log_in.css" media="all" type="text/css">
+        <link rel="stylesheet" href="css/validationEngine.jquery.css" media="all" type="text/css">
+        <link rel="stylesheet" href="css/template.css" media="all" type="text/css">
         <script type="text/javascript" src="js/jquery_1.6.1.js"></script>
+        <script type="text/javascript" src="js/jquery.validationEngine-en.js"></script>
+        <script type="text/javascript" src="js/jquery.validationEngine.js"></script>
         <script type="text/javascript">
-            var active = "#nav_about_me"
+            var active = "#nav_log_in";
+            
+            $(document).ready(function(){
+                $("#canvas").validationEngine();
+            });
         </script>
         <script type="text/javascript" src="js/base.js"></script>
     </head>
@@ -28,8 +37,21 @@
                     </ul>
                 </div>
                 <div id="canvas">
-                    <a href="#">Click/hover me</a>
-                    <p>Some random text like Lorem Ipsum?</p>
+                    <div class="input_text">
+                        <span>Username</span>
+                        <input type="text" value="" name="username" id="username" class="validate[required] text-input" />
+                    </div>
+                    <div class="input_text">
+                        <span>Password</span>
+                        <input type="password" value="" name="password" id="password" class="validate[required]" />
+                    </div>
+
+                    <label class="checkbox">
+                        <input type="checkbox" name="checkbox" value="on" checked="checked" />
+                        Keep me logged in
+                    </label>
+
+                    <input type="button" value="Submit" />
                 </div>
             </div>
         </div>

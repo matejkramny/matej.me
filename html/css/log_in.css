@@ -1,0 +1,14 @@
+/*
+   Canvas override
+*/
+#canvas
+{
+   width:312px;
+   height:155px;
+   background-image: url("../images/box_log_in.png");
+   background-repeat: no-repeat;
+   margin:0 auto;
+   margin-top:30px;
+   display:block;
+   padding:13px;
+}

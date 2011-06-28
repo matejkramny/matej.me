@@ -1,20 +1,5 @@
 $(document).ready(function(){
-    $(".JQ_about_me").nav_flyup( {
-        div:"about_me",
-        baseDiv:".JQ_about_me"
-    } );
-    $(".JQ_log_in").nav_flyup( {
-        div:"log_in",
-        baseDiv:".JQ_log_in"
-    } );
-    $(".JQ_portfolio").nav_flyup( {
-        div:"portfolio",
-        baseDiv:".JQ_portfolio"
-    } );
-    $(".JQ_contact").nav_flyup( {
-        div:"contact",
-        baseDiv:".JQ_contact"
-    } );
+    $().nav_flyup();
 
     $('label').disableSelection();
     $().checkbox ();
@@ -23,42 +8,67 @@ $(document).ready(function(){
 });
 
 $.fn.nav_flyup = function (){
-    var args = arguments[0] || {};
+    $("#navigation li").prepend("<span></span>");
 
-    var nav = args.div;
-    var base = args.baseDiv;
+    $(active).find("a").css({
+        marginTop: -79
+    });
+    $(active).find("span").css({
+        marginTop: 0
+    });
 
-    $(base + " a").mouseover(function(){
-        $(base + " div#" + nav + ", " + base + " div#" + nav + "_active").stop(true).animate({
-            'bottom':'50px'
-        }, 'fast');
-        $(base + " div#" + nav + "_active").css ( {
-            'opacity': 0,
-            'visibility': 'visible'
-        } ).animate( {
-            opacity: 1
-        }, 'fast' );
-        $(base + " a").animate ( {
-            'top':'-50px',
-            'height':'129px'
-        } );
-    }).mouseout (function(){
-        $(base + " div#" + nav + "_active").stop(true).animate( {
-            opacity: 0
-        }, 'fast', function() {
-            $(base + " a").animate( {
-                'top':'0px',
-                'height':'79px'
-            } );
-            $(base + " div#" + nav).animate({
-                'height':'79px',
-                'bottom':'0px'
-            }, 'slow');
-        } );
+
+    $("#navigation li").hover(function() {
+        var id = "#" + this.id;
+
+        if(id == active)
+        {
+            // do nothing
+            return;
+        }
+        else
+        {
+            $(active).find("a").stop().animate({
+                marginTop: 0
+            }, 250);
+            $(active).find("span").stop().animate({
+                marginTop: 79
+            }, 250);
+        }
+
+        $(this).find("a").stop().animate({
+            marginTop: -79
+        }, 250);
+        $(this).find("span").stop().animate({
+            marginTop: 0
+        }, 250);
+    } , function() {
+        var id = "#" + this.id;
+
+        if(id == active)
+        {
+            // do nothing
+            return;
+        }
+        else
+        {
+            $(active).find("a").stop().animate({
+                marginTop: -79
+            }, 250);
+            $(active).find("span").stop().animate({
+                marginTop: 0
+            }, 250);
+        }
+
+        $(this).find("a").stop().animate({
+            marginTop: "0"
+        }, 250);
+        $(this).find("span").stop().animate({
+            marginTop: 79
+        }, 250);
     }).click(function(){
-        // click event handler
-        window.location = nav + ".html";
-        return false;
+        var href = $(this).find("a").attr ("href");
+        window.location = href;
     });
 };
 
@@ -90,7 +100,7 @@ $.fn.inputs = function ()
             {
                 opacity = 0;
             }
-            
+
             child.animate({
                 opacity:opacity,
                 fontSize: "18px",
@@ -101,7 +111,7 @@ $.fn.inputs = function ()
         }).keyup (function(){
             if($(this).val().length > 0)
             {
-                
+
             }
             else if(child.width() >= '293')
             {

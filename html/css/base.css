@@ -252,20 +252,21 @@ h6
     margin-left:1px;
     float:left;
     height:inherit;
-    background-image: url("../images/navigation.png");
+    overflow: hidden;
 }
-#navigation li a
+#navigation a, #navigation span
 {
     display:block;
     position:absolute;
     width:inherit;
     height:inherit;
     text-indent: -999999px;
+    background-image: url("../images/navigation.png");
+    cursor:pointer;
 }
-#navigation li a, #navigation li a:hover, #navigation li a:visited, #navigation li a :active
+#navigation span
 {
-    cursor: pointer;
-    z-index:6;
+    margin-top: 79px;
 }
 
 /* Navigation about_me link */
@@ -278,20 +279,16 @@ h6
     height:inherit;
     background:none;
 }
-#navigation li#nav_about_me div#about_me, #navigation li#nav_about_me div#about_me_active
+#navigation li#nav_about_me a, #navigation li#nav_about_me span
 {
     width:inherit;
     background-image: url("../images/navigation.png");
     background-position:0px 0px;
-    position:absolute;
-    z-index:4;
     height:inherit;
 }
-#navigation li#nav_about_me div#about_me_active
+#navigation li#nav_about_me span
 {
     background-position: 0px 79px;
-    visibility:hidden;
-    z-index:5;
 }
 
 /* Navigation log_in link */
@@ -304,20 +301,16 @@ h6
     height:inherit;
     background:none;
 }
-#navigation li#nav_log_in div#log_in, #navigation li#nav_log_in div#log_in_active
+#navigation li#nav_log_in a, #navigation li#nav_log_in span
 {
     width:inherit;
     background-image: url("../images/navigation.png");
     background-position: -255px 0px;
-    position:absolute;
-    z-index:4;
     height:inherit;
 }
-#navigation li#nav_log_in div#log_in_active
+#navigation li#nav_log_in span
 {
     background-position: -255px 79px;
-    visibility:hidden;
-    z-index:5;
 }
 
 /* Navigation portfolio link */
@@ -330,20 +323,16 @@ h6
     height:inherit;
     background:none;
 }
-#navigation li#nav_portfolio div#portfolio, #navigation li#nav_portfolio div#portfolio_active
+#navigation li#nav_portfolio a, #navigation li#nav_portfolio span
 {
     width:inherit;
     background-image: url("../images/navigation.png");
     background-position: -496px 0px;
-    position:absolute;
-    z-index:4;
     height:inherit;
 }
-#navigation li#nav_portfolio div#portfolio_active
+#navigation li#nav_portfolio span
 {
     background-position: -496px 79px;
-    visibility:hidden;
-    z-index:5;
 }
 
 /* Navigation contact link */
@@ -356,20 +345,16 @@ h6
     height:inherit;
     background:none;
 }
-#navigation li#nav_contact div#contact, #navigation li#nav_contact div#contact_active
+#navigation li#nav_contact a, #navigation li#nav_contact span
 {
     width:inherit;
     background-image: url("../images/navigation.png");
     background-position: -721px 0px;
-    position:absolute;
-    z-index:4;
     height:inherit;
 }
-#navigation li#nav_contact div#contact_active
+#navigation li#nav_contact span
 {
     background-position: -721px 79px;
-    visibility:hidden;
-    z-index:5;
 }
 
 /*
@@ -435,7 +420,7 @@ label
     border: none;
     padding: 0;
     font-size: 22px;
-    font-family: "HelveticaNeue-Light";
+    font-family: "HelveticaNeue-Light", "HelveticaNeue", Helvetica;
     cursor:pointer;
     clear:both;
     margin-left: 172px;
@@ -466,8 +451,7 @@ label
     padding-left:0.6em;
     text-align: right;
     height:18px;
-    /* width:293px; */
-    text-shadow: 0 0px 0 gray;
+    text-shadow: 0 1px 0 gray;
     overflow:hidden;
 }
 .input_text input[type=text], .input_text input[type=password]
