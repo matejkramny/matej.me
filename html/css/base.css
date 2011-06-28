@@ -479,3 +479,42 @@ label
     background-position: 0px -36px;
 }
 
+/*
+    Sticker
+*/
+.sticker
+{
+    position:absolute;
+    background-image: url(../images/sticker.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 323px;
+    height: 126px;
+    bottom:10px;
+    right:10px;
+}
+.sticker p
+{
+    padding:3px 7px;
+    font-family:"HelveticaNeue", Helvetica;
+    font-size: 20px;
+    line-height: 23px;
+}
+.sticker a
+{
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    font-size:24px;
+    text-shadow:none;
+    text-decoration: underline;
+}
+.sticker a:hover
+{
+    text-shadow: 0 0 1px blue;
+    text-decoration: none;
+}
+.sticker a:active
+{
+    text-shadow: 0 0 1px red;
+}
