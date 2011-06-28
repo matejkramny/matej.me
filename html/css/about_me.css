@@ -1,0 +1,30 @@
+.title
+{
+    width:676px;
+    height:43px;
+    background-image: url(../images/text_what_i_can_do_for_your_business.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    margin:10px auto 0;
+    text-indent:-9999999px;
+}
+
+#boxes
+{
+    width:920px;
+    margin:10px auto 0;
+}
+.box
+{
+    width:222px;
+    height:202px;
+    background-image: url(../images/box_info.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float:left;
+    margin-left:7px;
+}
+.box p
+{
+    padding:8px;
+}

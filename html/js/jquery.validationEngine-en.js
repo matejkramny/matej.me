@@ -102,7 +102,7 @@
                     "url": "ajaxValidateFieldUser.php",
                     "extraData": "name=eric",
                     "alertTextOk":"This email appears to be OK",
-                    "alertText": "* This username is not registered",
+                    "alertText": "* This email is not registered",
                     "alertTextLoad": "* Checking, please wait"
                 },
                 //tls warning:homegrown not fielded 

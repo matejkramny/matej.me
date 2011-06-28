@@ -17,7 +17,7 @@
 #canvas div#text
 {
     position:absolute;
-    top:-8px;
+    top:-2px;
     left: 319px;
     height:161px;
     width:300px;
@@ -41,7 +41,7 @@
 #canvas div#text a
 {
     position:absolute;
-    bottom:3px;
+    bottom:9px;
     left:10px;
     text-shadow: none;
     color: rgb(255,255,255);
