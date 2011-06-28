@@ -83,9 +83,11 @@ $.fn.inputs = function ()
 
         $(this).focus(function(){
             $(this).parent().toggleClass ("focused");
+            child.animate({opacity:0.8},'fast');
         }).blur (function(){
             $(this).parent().toggleClass ("focused");
-        }).keypress(function(){
+            child.animate({opacity:1},'fast');
+        }).keypress(function(e){
             var opacity = 0.5;
 
             var defaultTextWidth = $().getTextWidth(child.html());

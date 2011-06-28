@@ -6,15 +6,38 @@
         <link rel="stylesheet" href="css/base.css" media="all" type="text/css">
         <link rel="stylesheet" href="css/log_in.css" media="all" type="text/css">
         <link rel="stylesheet" href="css/validationEngine.jquery.css" media="all" type="text/css">
-        <link rel="stylesheet" href="css/template.css" media="all" type="text/css">
         <script type="text/javascript" src="js/jquery_1.6.1.js"></script>
-        <script type="text/javascript" src="js/jquery.validationEngine-en.js"></script>
-        <script type="text/javascript" src="js/jquery.validationEngine.js"></script>
+        <script type="text/javascript" src="js/jquery.validationEngine-en.js" charset="utf-8"></script>
+        <script type="text/javascript" src="js/jquery.validationEngine.js" charset="utf-8"></script>
         <script type="text/javascript">
             var active = "#nav_log_in";
             
+            function beforeCall(form, options){
+                if (window.console) 
+                    console.log("Right before the AJAX form validation call");
+                return true;
+            }
+            
+            function ajaxValidationCallback(status, form, json, options){
+                if (window.console) 
+                    console.log(status);
+                
+                if (status === true) {
+                    alert("the form is valid!");
+                    // uncomment these lines to submit the form to form.action
+                    // form.validationEngine('detach');
+                    // form.submit();
+                    // or you may use AJAX again to submit the data
+                }
+            }
+            
             $(document).ready(function(){
-                $("#canvas").validationEngine();
+                $("#formID").validationEngine({
+                    ajaxFormValidation: true,
+                    onAjaxFormComplete: ajaxValidationCallback,
+                    promptPosition : "topRight",
+                    validationEventTrigger: 'blur'
+                });
             });
         </script>
         <script type="text/javascript" src="js/base.js"></script>
@@ -37,21 +60,30 @@
                     </ul>
                 </div>
                 <div id="canvas">
-                    <div class="input_text">
-                        <span>Username</span>
-                        <input type="text" value="" name="username" id="username" class="validate[required] text-input" />
-                    </div>
-                    <div class="input_text">
-                        <span>Password</span>
-                        <input type="password" value="" name="password" id="password" class="validate[required]" />
-                    </div>
+                    <form action="ajaxValidateSubmit.php" id="formID" method="GET">
+                        <div class="input_text">
+                            <span>E-Mail</span>
+                            <input type="text" value="" name="email" id="email" class="validate[required,custom[onlyLetterNumber],minSize[4],maxSize[13],ajax[ajaxEmailCallPhp]" />
+                        </div>
+                        <div class="input_text">
+                            <span>Password</span>
+                            <input type="password" value="" name="password" id="password" class="validate[required,minSize[5]" />
+                        </div>
 
-                    <label class="checkbox">
-                        <input type="checkbox" name="checkbox" value="on" checked="checked" />
-                        Keep me logged in
-                    </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="checkbox" value="on" checked="checked" />
+                            Keep me logged in
+                        </label>
 
-                    <input type="button" value="Submit" />
+                        <input type="button" value="Submit" onClick="$('#formID').submit();" />
+                    </form>
+                    
+                    <div id="text">
+                        <p class="white">
+                            Try out the demo account:<br/><br/>E-Mail: <i>demonstration</i><br/>Password: <i>hello123</i>
+                            <a href="#">I forgot my password</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

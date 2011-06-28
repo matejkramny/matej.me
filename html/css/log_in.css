@@ -3,12 +3,54 @@
 */
 #canvas
 {
-   width:312px;
-   height:155px;
+   width:309px;
+   height:153px;
    background-image: url("../images/box_log_in.png");
    background-repeat: no-repeat;
    margin:0 auto;
    margin-top:30px;
    display:block;
-   padding:13px;
+   padding:5px;
+   position:relative;
+}
+
+#canvas div#text
+{
+    position:absolute;
+    top:-8px;
+    left: 319px;
+    height:161px;
+    width:300px;
+    overflow: hidden;
+    display:block;
+    color:white;
+}
+#canvas div#text p
+{
+    padding:10px;
+    line-height: 20px;
+    height:100%;
+}
+#canvas div#text i
+{
+    position:absolute;
+    left:120px;
+    color:white;
+    font-style: italic;
+}
+#canvas div#text a
+{
+    position:absolute;
+    bottom:3px;
+    left:10px;
+    text-shadow: none;
+    color: rgb(255,255,255);
+}
+#canvas div#text a:hover
+{
+    text-shadow: 0 1px 0 gray;
+}
+#canvas div#text a:active
+{
+    text-shadow: 0 1px 0 red;
 }
