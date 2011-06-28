@@ -11,7 +11,7 @@
 
 #boxes
 {
-    width:920px;
+    width:909px;
     margin:10px auto 0;
 }
 .box
@@ -24,7 +24,15 @@
     float:left;
     margin-left:7px;
 }
+.box_first
+{
+    margin-left:0px;
+}
 .box p
 {
-    padding:8px;
+    padding:9px 12px 10px;
+    text-shadow: 0 0 3px white;
+    line-height: 22px;
+    font-size: 20px;
+    font-family: "HelveticaNeue", Helvetica;
 }

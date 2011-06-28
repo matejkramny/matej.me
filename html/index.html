@@ -6,8 +6,26 @@
         <link rel="stylesheet" href="css/base.css" media="all" type="text/css">
         <link rel="stylesheet" href="css/about_me.css" media="all" type="text/css">
         <script type="text/javascript" src="js/jquery_1.6.1.js"></script>
+        <script type="text/javascript" src="js/jquery.animate-textshadow.min.js"></script>
         <script type="text/javascript">
-            var active = "#nav_about_me"
+            var active = "#nav_about_me";
+            
+            $(document).ready(function(){
+                $("#boxes .box").each (function(){
+                    var p = $(this).children("p");
+                    var a = $(this).children("a");
+                    
+                    $(this).mouseover(function(){
+                        p.stop(true).animate({
+                            textShadow: "0 0 5px #FFF"
+                        }, 'fast');
+                    }).mouseout(function(){
+                        p.stop(true).animate({
+                            textShadow: "0 0 3px #FFF"
+                        }, 'fast');
+                    });
+                });
+            });
         </script>
         <script type="text/javascript" src="js/base.js"></script>
     </head>
@@ -31,26 +49,27 @@
                 <div id="canvas">
                     <div class="title">What I can do for your business!</div>
                     <div id="boxes">
-                        <div class="box">
+                        <div class="box box_first">
                             <p class="darkgray">
-                                Hi there. im in box #1
+                                Design you a personal or small-business website, and convert it into W3C Compatible HTML format for you.
                             </p>
                         </div>
                         <div class="box">
                             <p class="darkgray">
-                                Hi there. im in box #2
+                                Code your dynamic website from the 'front-end', a user friendly enviroment to the 'back-end' used for administration purposes.
                             </p>
                         </div>
                         <div class="box">
                             <p class="darkgray">
-                                Hi there. im in box #3
+                                Using popular PHP scripting language and my PHP-framework project, your website will always comply with your expectations.
                             </p>
                         </div>
                         <div class="box">
                             <p class="darkgray">
-                                Hi there. im in box #4
+                                I will give you full control over the code, letting you modify to anything you wish. You will also have all the source code I used.
                             </p>
                         </div>
+                        <div class="clear"></div>
                     </div>
                 </div>
             </div>

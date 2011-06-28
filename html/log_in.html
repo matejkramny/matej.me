@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>About matej</title>
+        <title>Log in to matej.me</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/base.css" media="all" type="text/css">
         <link rel="stylesheet" href="css/log_in.css" media="all" type="text/css">
@@ -63,7 +63,7 @@
                     <form action="ajaxValidateSubmit.php" id="formID" method="GET">
                         <div class="input_text">
                             <span>E-Mail</span>
-                            <input type="text" value="" name="email" id="email" class="validate[required,custom[onlyLetterNumber],minSize[4],maxSize[13],ajax[ajaxEmailCallPhp]" />
+                            <input type="text" value="" name="email" id="email" class="validate[required,custom[email],ajax[ajaxEmailCallPhp]" />
                         </div>
                         <div class="input_text">
                             <span>Password</span>

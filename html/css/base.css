@@ -76,6 +76,11 @@ table {
     float:right;
 }
 
+.nomargin
+{
+    margin:0px;
+}
+
 body, html
 {
     height:100%;
