@@ -36,3 +36,19 @@
     font-size: 20px;
     font-family: "HelveticaNeue", Helvetica;
 }
+
+p
+{
+    padding:12px 9px;
+    text-shadow: none;
+    line-height: 22px;
+    font-size: 20px;
+    font-family: "HelveticaNeue", Helvetica;
+}
+
+p#thanks
+{
+    position:absolute;
+    bottom:8px;
+    left: 190px;
+}
