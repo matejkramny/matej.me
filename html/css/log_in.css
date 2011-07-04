@@ -12,6 +12,7 @@
    display:block;
    padding:5px;
    position:relative;
+   overflow: visible;
 }
 
 #canvas div#text

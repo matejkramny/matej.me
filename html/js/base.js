@@ -5,8 +5,6 @@ $(document).ready(function(){
     $().checkbox ();
     $().button ();
     $().inputs ();
-    
-    $(".gallery").gallery();
 });
 
 $.fn.nav_flyup = function (){
