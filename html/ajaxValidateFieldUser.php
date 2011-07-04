@@ -14,7 +14,7 @@ $validateSuccess= "This username is available";
 	$arrayToJs = array();
 	$arrayToJs[0] = $validateId;
 
-if($validateValue =="karnius"){		// validate??
+if($validateValue =="demo@matej.me"){		// validate??
 	$arrayToJs[1] = true;			// RETURN TRUE
 	echo json_encode($arrayToJs);			// RETURN ARRAY WITH success
 }else{

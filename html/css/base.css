@@ -119,6 +119,12 @@ p
     text-shadow: none;
 }
 
+.textRotate
+{
+    -webkit-transform: rotate(1.1deg); 
+    -moz-transform: rotate(1.1deg);	
+}
+
 /*
  ----> End of CSS Reset
 */
@@ -193,7 +199,9 @@ h6
     background: url("../images/background.png") no-repeat;
     background-position: center top;
     position:relative;
-    height:100%;
+    min-width: 939px;
+    min-height: 773px;
+    height: 100%;
     width:100%;
 }
 #content
@@ -373,6 +381,7 @@ h6
    background-image: url("../images/container_bg.png");
    padding:10px;
    position:relative;
+   overflow:hidden;
 }
 
 /*

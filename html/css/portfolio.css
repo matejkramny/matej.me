@@ -58,6 +58,7 @@
     height:118px;
     clear:both;
     border:1px white;
+    cursor:pointer;
 }
 .list_area ul li img
 {

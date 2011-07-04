@@ -11,19 +11,7 @@
             var active = "#nav_portfolio";
             
             $(document).ready (function(){
-                var h1 = $("#canvas h1").last();
                 
-                h1.mouseover (function(){
-                    $(this).stop(true).animate ({
-                        textShadow: "0 0 6px #FFF"
-                    },'fast');
-                }).mouseout( function(){
-                    $(this).stop(true).animate({
-                        textShadow: "0 0 2px #000"
-                    })
-                }).click (function(){
-                    window.location = $("#canvas span").last().text();
-                });
             });
         </script>
         <script type="text/javascript" src="js/base.js"></script>
@@ -49,20 +37,15 @@
                     <div class="gallery">
                         <div class="img_area">
                             <div class="img_content">
-                                <img src="imgs/motokluby.jpg" >
+                                <img src="">
                             </div>
                         </div>
                         <div class="list_area">
                             <ul>
-                                <li><img src="imgs/motokluby.jpg"><span><h1>Moto-clubs</h1><p>The perfect social network for motorists</p></span></li>
+                                <li><img src="imgs/motokluby.jpg"><span><span>http://moto-kluby.cz</span> <h1>Moto-clubs</h1> <p>The perfect social network for motorists</p></span></li>
                             </ul>
                         </div>
                     </div>
-                    <span>http://moto-kluby.cz</span>
-                    <h1>Moto-clubs</h1>
-                    <p>
-                        The perfect social network for motorists
-                    </p>
                 </div>
             </div>
         </div>
