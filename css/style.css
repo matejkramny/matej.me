@@ -1,0 +1,72 @@
+body, html {
+	background: white;
+	/*text-align:right;margin-right:10px;*/
+}
+h1 {
+	font-weight:300;
+	text-align: center;
+}
+a, p {
+	text-decoration:none !important;
+	color:#333 !important;
+	font-weight:200;
+	font-size:20px;
+	line-height:20px;
+}
+p.lead {
+	text-align: center;
+}
+
+a {
+	line-height:25px;
+	padding:2px 5px;
+}
+a:hover {
+	box-shadow:0 0 5px #000;
+}
+
+ul {
+	list-style:none;
+	text-align:left;
+	margin:0 auto;
+	padding: 0;
+}
+
+.links {
+	/*position:absolute; right:10px; text-align:left; /*width:340px;*/
+}
+
+.links li > div {
+	text-align: center;
+	display: inline-block;
+	width: 36px;
+	margin-left: 5px;
+	padding: 2px 3px;
+  color: #d14;
+  white-space: nowrap;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+  font-size: 12px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.links li > a {
+	position: relative;
+	top: 3px;
+}
+
+.content {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.content > div {
+	background: #EEEEEF;
+	min-height: 100vh;
+	padding-bottom: 10px;
+}
